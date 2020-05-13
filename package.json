@@ -1,0 +1,19 @@
+{
+  "name": "userlocation-server",
+  "version": "1.0.0",
+  "description": "user location",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "userlocation",
+    "user lookup"
+  ],
+  "author": "Anhtram Nguyen",
+  "license": "Private",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.13.3"
+  }
+}
