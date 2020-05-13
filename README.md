@@ -2,8 +2,11 @@
 PART I: Download & Build on local
 1) Clone the repository, install node packages 
 git clone https://github.com/anhtramnguyen/UserLocation.git
+
 cd UserLocation
+
 npm install
+
 node app.js
 
 Open your local browser and try accessing
