@@ -1,20 +1,22 @@
 A simple API that accepts user location webhooks and can be queried with a search string or a visit ID
 
-This API exposes the following two endpoints
-a. POST /visit
-  i. Accepts POST requests with ‘application/json’ types
-  ii. The schema for submitted objects is as follows:
-    1. userId ​- the user that is submitting the location
-    2. name ​- the name of the location
-  iii. Returns a ​visitId​ which can be referenced in the GET. Visit IDs are globally unique to the location submission
-b. GET /visit
-  i. Can be queried with either of the following patterns:
-    1. visitId
-    2. both​ of the following two query params:
-        a. userId
-        b. searchString-​ A string which is attempted to be matched over the 5 most recent locations the user has visited. 
+This API exposes the following two endpoints:
+
+1. POST /visit
+  a. Accepts POST requests with ‘application/json’ types
+  b. The schema for submitted objects is as follows:
+      1. userId ​- the user that is submitting the location
+      2. name ​- the name of the location
+  c. Returns a ​visitId​ which can be referenced in the GET. Visit IDs are globally unique to the location submission
+  
+2. GET /visit
+  a. Can be queried with either of the following patterns:
+    i. visitId
+    ii. both​ of the following two query params:
+        . userId
+        . searchString-​ A string which is attempted to be matched over the 5 most recent locations the user has visited. 
            The matching should be fuzzy, and case insensitive
-  ii. Returns an array of arrival objects that was submitted to the POST
+  b. Returns an array of arrival objects that was submitted to the POST
 
 Errors are clearly handled and input are validated
 Service are secured with https
