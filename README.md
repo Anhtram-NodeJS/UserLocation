@@ -10,9 +10,9 @@ This API exposes the following two endpoints:
   c. Returns a visitId which can be referenced in the GET. Visit IDs are globally unique to the location submission
   
 2. GET /visit
-  a. Can be queried with either of the following patterns:
-    i. visitId
-    ii. both of the following two query params: 
+  a. Can be queried with either of the following patterns
+     i. visitId
+    ii. both of the following two query params:
         . userId 
         . searchString- A string which is attempted to be matched over the 5 most recent locations the user has visited.
            The matching should be fuzzy, and case insensitive.
