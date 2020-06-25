@@ -1,3 +1,35 @@
+A simple API that accepts user location webhooks and can be queried with a search string or a visit ID
+
+This API exposes the following two endpoints
+a. POST /visit
+  i. Accepts POST requests with ‘application/json’ types
+  ii. The schema for submitted objects is as follows:
+    1. userId ​- the user that is submitting the location
+    2. name ​- the name of the location
+  iii. Returns a ​visitId​ which can be referenced in the GET. Visit IDs are globally unique to the location submission
+b. GET /visit
+  i. Can be queried with either of the following patterns:
+    1. visitId
+    2. both​ of the following two query params:
+        a. userId
+        b. searchString-​ A string which is attempted to be matched over the 5 most recent locations the user has visited. 
+           The matching should be fuzzy, and case insensitive
+  ii. Returns an array of arrival objects that was submitted to the POST
+
+Errors are clearly handled and input are validated
+Service are secured with https
+
+Example timeline​:
+POST { userId: “user1”, name: “McDonald’s” } Returns: { visitId: “some-visit-id-1” }
+GET /visit?visitId=some-visit-id-1
+Returns: [{ userId: “user1”, name: “McDonald’s”, visitId: “some-visit-id-1” }]
+POST { userId: “user1”, name: “Starbucks” }
+Returns: { visitId: “some-visit-id-2” }
+GET /visit?userId=user1&searchString=MCDONALD’S LAS VEGAS Returns: [{ userId: “user1”, name: “McDonald’s”, visitId: “some-visit-id-1” }]
+POST { userId: “user2”, name: “Starbucks” } Returns: { visitId: “some-visit-id-3” }
+GET /visit?userId=user2&searchString=APPLE Returns: []
+
+
 # UserLocation
 PART I: Download & Build on local
 
