@@ -3,7 +3,7 @@ A simple API that accepts user location webhooks and can be queried with a searc
 This API exposes the following two endpoints:
 
 1. POST /visit
-  a. Accepts POST requests with ‘application/json’ types
+  a. Accepts POST requests with ‘application/json’ types.
   b. The schema for submitted objects is as follows:
       1. userId ​- the user that is submitting the location
       2. name ​- the name of the location
@@ -12,16 +12,17 @@ This API exposes the following two endpoints:
 2. GET /visit
   a. Can be queried with either of the following patterns:
     i. visitId
-    ii. both​ of the following two query params:
-        . userId
-        . searchString-​ A string which is attempted to be matched over the 5 most recent locations the user has visited. 
-           The matching should be fuzzy, and case insensitive
-  b. Returns an array of arrival objects that was submitted to the POST
+    ii. both​ of the following two query params: 
+        . userId 
+        . searchString-​ A string which is attempted to be matched over the 5 most recent locations the user has visited.
+           The matching should be fuzzy, and case insensitive.
+  b. Returns an array of arrival objects that was submitted to the POST.
 
-Errors are clearly handled and input are validated
-Service are secured with https
+Errors are clearly handled and input are validated.
+Service are secured with https.
 
-Example timeline​:
+Example timeline:
+
 POST { userId: “user1”, name: “McDonald’s” } Returns: { visitId: “some-visit-id-1” }
 GET /visit?visitId=some-visit-id-1
 Returns: [{ userId: “user1”, name: “McDonald’s”, visitId: “some-visit-id-1” }]
