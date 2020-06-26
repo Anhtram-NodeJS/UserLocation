@@ -8,23 +8,14 @@ This API exposes the following two endpoints:
 	- The schema for submitted objects is as follows:
 		1. userId - the user that is submitting the location
 		2. name - the name of the location
-	- Returns a visitId which can be referenced in the GET. Visit IDs are globally unique to the location submission
-  
+	- Returns a visitId which can be referenced in the GET. Visit IDs are globally unique to the location submission  
 2. GET /visit
-
-  a. Can be queried with either of the following patterns
-  
-     i. visitId
-     
-    ii. both of the following two query params:
-    
-        . userId 
-        
-        . searchString- A string which is attempted to be matched over the 5 most recent locations the user has visited.
-        
-           The matching should be fuzzy, and case insensitive.
-           
-  b. Returns an array of arrival objects that was submitted to the POST.
+	- Can be queried with either of the following patterns
+		a. `visitId`
+		b. both of the following two query params:
+			- `userId` 
+			- `searchString` - A string which is attempted to be matched over the 5 most recent locations the user has visited. The matching should be fuzzy, and case insensitive.
+	- Returns an array of arrival objects that was submitted to the POST.
 
 Errors are clearly handled and input are validated.
 
