@@ -7,9 +7,7 @@ This API exposes the following two endpoints:
 	a. Accepts POST requests with ‘application/json’ types.
 	
 	b. The schema for submitted objects is as follows:
-  
 		1. userId - the user that is submitting the location
-      
 		2. name - the name of the location
 	
 	c. Returns a visitId which can be referenced in the GET. Visit IDs are globally unique to the location submission
