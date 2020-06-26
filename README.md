@@ -1,16 +1,14 @@
+
 A simple API that accepts user location webhooks and can be queried with a search string or a visit ID
 
 This API exposes the following two endpoints:
 
 1. POST /visit
-  
-	a. Accepts POST requests with ‘application/json’ types.
-	
-	b. The schema for submitted objects is as follows:
+	- Accepts POST requests with ‘application/json’ types.
+	- The schema for submitted objects is as follows:
 		1. userId - the user that is submitting the location
 		2. name - the name of the location
-	
-	c. Returns a visitId which can be referenced in the GET. Visit IDs are globally unique to the location submission
+	- Returns a visitId which can be referenced in the GET. Visit IDs are globally unique to the location submission
   
 2. GET /visit
 
